@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### json-server indítása
+```
+json-server --watch data.json
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
