@@ -1,5 +1,6 @@
 <template>
-	<div class="py-2">
+	<div class="newsletter-form pb-2">
+		<h2>{{ title }}</h2>
 		<b-form @submit.stop.prevent="onSubmit">
 			<b-row>
 				<b-col xl="6">
@@ -68,8 +69,15 @@ import { required, minLength, email } from 'vuelidate/lib/validators'
 
 export default {
 	mixins: [validationMixin],
+	props: {
+		formTitle: {
+			type: String,
+			default: "Subscribe to the newsletter"
+		}
+	},
 	data() {
 		return {
+			title : this.formTitle,
 			form: {
 				firstname: null,
 				lastname: null,
@@ -136,7 +144,21 @@ export default {
 }
 </script>
 <style lang="scss">
-.submit-btn {
-	font-weight: 500 !important;
+.newsletter-form {
+	h2 {
+		margin-bottom: 1rem;
+		font-weight: 700;
+		font-size: 0.875rem;
+		line-height: 1.125rem;
+		color: $secondary;
+		text-align: center;
+		@include media-breakpoint-up(md) {
+			text-align: left;
+		}
+	}
+	.submit-btn {
+		font-weight: 500 !important;
+	}
 }
+
 </style>
