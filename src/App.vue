@@ -149,6 +149,17 @@ header {
 footer {
 	border-top: 1px solid rgba(#2e2e2e, 15%);
 	padding-top: 1.875rem;
+	h2 {
+		margin-bottom: 0.75rem;
+		font-weight: 700;
+		font-size: 0.875rem;
+		line-height: 1.125rem;
+		color: $secondary;
+		text-align: center;
+		@include media-breakpoint-up(md) {
+			text-align: left;
+		}
+	}
 	.scroll-up {
 		border-top: 1px solid rgba(#2e2e2e, 15%);
 		height: 3.438rem;

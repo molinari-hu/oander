@@ -101,7 +101,8 @@ export default {
 		resetForm() {
 			this.form = {
 				firstname: null,
-				lastname: null
+				lastname: null,
+				email: null
 			}
 
 			this.$nextTick(() => {
