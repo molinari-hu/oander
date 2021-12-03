@@ -16,7 +16,7 @@
 
 						<b-form-invalid-feedback id="firstname-feedback"
 							>This is a required field and must be at least 3
-							characters.</b-form-invalid-feedback
+							alphabetic characters.</b-form-invalid-feedback
 						>
 					</b-form-group>
 				</b-col>
@@ -33,7 +33,7 @@
 
 						<b-form-invalid-feedback id="lastname-feedback"
 							>This is a required field and must be at least 3
-							characters.</b-form-invalid-feedback
+							alphabetic characters.</b-form-invalid-feedback
 						>
 					</b-form-group>
 				</b-col>
@@ -65,7 +65,7 @@
 <script>
 import axios from 'axios'
 import { validationMixin } from 'vuelidate'
-import { required, minLength, email } from 'vuelidate/lib/validators'
+import { required, minLength, email, alpha } from 'vuelidate/lib/validators'
 
 export default {
 	mixins: [validationMixin],
@@ -89,10 +89,12 @@ export default {
 		form: {
 			firstname: {
 				required,
+				alpha,
 				minLength: minLength(3)
 			},
 			lastname: {
 				required,
+				alpha,
 				minLength: minLength(3)
 			},
 			email: {
